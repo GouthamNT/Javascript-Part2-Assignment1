@@ -45,7 +45,8 @@ function findMaxMin() {
     for(i = 0;i < len; i++) {
         var temp = parseInt(numbers[i].value);
         if(isNaN(temp)) {
-            
+            var flag = 0;
+            break;
         }
         else {
             if(max <= temp) {
@@ -56,16 +57,31 @@ function findMaxMin() {
             }
         }
     }
-    if(para == null) {
-        para = document.createElement('p');
-        para.setAttribute('id','maxmin');
-        para.textContent = "Max number is "+ max + " Min Number is "+min;
-        result.appendChild(para);
-    }
-    else {
-        var newpara = document.createElement('p');
-        newpara.setAttribute('id','maxmin');
-        newpara.textContent = "Max number is "+ max + " Min Number is "+min;
-        result.replaceChild(newpara,para);
+    if(flag != 0) {
+        if(para == null) {
+            para = document.createElement('p');
+            para.setAttribute('id','maxmin');
+            para.textContent = "Max number is "+ max + " Min Number is "+min;
+            result.appendChild(para);
+        }
+        else {
+            var newpara = document.createElement('p');
+            newpara.setAttribute('id','maxmin');
+            newpara.textContent = "Max number is "+ max + " Min Number is "+min;
+            result.replaceChild(newpara,para);
+        }
+    } else {
+        if(para == null) {
+            para = document.createElement('p');
+            para.setAttribute('id','maxmin');
+            para.textContent = "Enter a Valid Number";
+            result.appendChild(para);
+        }
+        else {
+            var newpara = document.createElement('p');
+            newpara.setAttribute('id','maxmin');
+            newpara.textContent = "Enter a Valid Number";
+            result.replaceChild(newpara,para);
+        }
     }
 }
