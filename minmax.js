@@ -40,8 +40,8 @@ function findMaxMin() {
         i,max,min;
     var result = document.querySelector('#result'),
         para = document.querySelector('#maxmin');
-    max = -100000;
-    min = 100000;
+    max = numbers[0].value;
+    min = numbers[0].value;
     for(i = 0;i < len; i++) {
         var temp = parseInt(numbers[i].value);
         if(isNaN(temp)) {
